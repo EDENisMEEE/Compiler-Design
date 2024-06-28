@@ -1,0 +1,21 @@
+1.This static type checker checks if the c-code follows the rules below:
+
+(1) Each identifier should be defined before it is used, including variables call by main function and printf and scanf.
+(2) Each identifier can only be declared once.
+(3) The types of the operands of an arithmetic operator: “+”,  “-”,  “*”,  “/”, “%”, and comparison operator : “>”, “<”, “>=”, “<=”, “==”, “!=” must be the same.
+(4) The result of comparison operation must be Boolean.
+(5) The conditional expression in while-loop, for-loop, and if-else statement must be Boolean.
+
+else it reports error :Error! line number: the error message.
+
+2. How to compile:
+(1) $ make
+or manual compilation
+(2) $ java -cp antlr-3.5.3-complete-no-st3.jar org.antlr.Tool myChecker.g && \
+    $ javac -cp antlr-3.5.3-complete-no-st3.jar:. *.java 
+
+3. How to execute:
+    $ java -cp antlr-3.5.3-complete-no-st3.jar:. myChecker_test demo1.c
+    $ java -cp antlr-3.5.3-complete-no-st3.jar:. myChecker_test demo2.c
+    $ java -cp antlr-3.5.3-complete-no-st3.jar:. myChecker_test demo3.c
+
